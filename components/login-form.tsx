@@ -50,9 +50,7 @@ export function LoginForm({
                 <Input id="password" type="password" required />
               </Field>
               <Field>
-                <Button type="submit" className="w-full">
-                  Sign in
-                </Button>
+                <Button type="submit">Login</Button>
               </Field>
               <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
                 Or continue with
