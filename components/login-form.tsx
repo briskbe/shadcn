@@ -1,6 +1,5 @@
-import Image from "next/image"
-
 import { cn } from "@/lib/utils"
+import { LoginMeshBackground } from "@/components/login-mesh-background"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -18,7 +17,7 @@ export function LoginForm({
 }: React.ComponentProps<"div">) {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card className="overflow-hidden border-border/60 p-0 shadow-lg shadow-primary/5 ring-1 ring-border/50">
+      <Card className="overflow-hidden border-border/40 bg-card/80 p-0 shadow-xl shadow-slate-900/5 ring-1 ring-white/50 backdrop-blur-sm dark:ring-white/5">
         <CardContent className="grid p-0 md:grid-cols-2">
           <form className="p-6 md:p-8">
             <FieldGroup>
@@ -91,14 +90,13 @@ export function LoginForm({
               </FieldDescription>
             </FieldGroup>
           </form>
-          <div className="relative hidden min-h-[20rem] bg-muted md:min-h-full md:block">
-            <Image
-              src="/placeholder.svg"
-              alt=""
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover dark:brightness-[0.2] dark:contrast-125 dark:grayscale"
+          <div className="relative hidden min-h-[20rem] overflow-hidden md:min-h-full md:block">
+            <div className="absolute inset-0">
+              <LoginMeshBackground variant="panel" />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-white/25 to-transparent dark:from-black/15 dark:to-transparent"
+              aria-hidden
             />
           </div>
         </CardContent>
